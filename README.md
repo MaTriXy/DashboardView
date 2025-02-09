@@ -1,14 +1,27 @@
 # DashboardView
+[![](https://jitpack.io/v/SuperKung/DashboardView.svg)](https://jitpack.io/#SuperKung/DashboardView)
+
 Android 自定义View 仪表盘
 
-![DashboardView](https://github.com/SuperKung/DashboardView/blob/master/dashboard-view.gif)
+![DashboardView](https://github.com/SuperKung/DashboardView/blob/master/Dashboard.gif)
 
 ##HOW TO USE
 
 ###gradle
 
+
+root build.gradle:
 ```Groovy
-compile 'com.superkung:dashboard-view:1.1.1'
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+moudle build.gradle:
+```Groovy
+compile 'com.github.SuperKung:DashboardView:1.2.1'
 ```
 ###xml
 ```xml
@@ -27,10 +40,17 @@ compile 'com.superkung:dashboard-view:1.1.1'
   app:progressColor
   app:startProgressColor
   app:endProgressColor
+  app:progressStrokeWidth
+  app:tikeStrArray
+  app:tikeStrColor
+  app:tikeStrSize
+  app:startNumber
+  app:maxNumber
+  app:centerCircleColor
 ```
 ###java
 ```java
-setPercent(int percent);//核心方法，percent = 1~100
+setPercent(int percent);//核心方法，percent = 0~100
 //以下方法都可有可无，如果在xml中设置了则不必重复设置,适用于需要动态改变状态的情况
 setText(String text);
 setTextSize(int size);
